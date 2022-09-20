@@ -1,0 +1,16 @@
+def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        if head is None:
+            return head
+        prev = None
+        curr = head
+        after = curr.next
+        
+        while curr:
+            curr.next = prev
+            prev = curr
+            curr = after
+            if after:
+                after = after.next
+        head = prev
+        
+        return head
