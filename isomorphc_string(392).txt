@@ -1,0 +1,16 @@
+ def isIsomorphic(self, s: str, t: str) -> bool:
+        if len(s) != len(t):
+            return False
+        d = {}
+        for i in range(len(s)):
+            c1 = s[i]
+            c2 = t[i]
+            if c1 not in d:
+                if c2 in d.values():
+                    return False
+                else:
+                    d[c1] = c2
+                
+            elif d[c1] != c2:
+                    return False
+        return True
